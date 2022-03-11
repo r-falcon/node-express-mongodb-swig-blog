@@ -1,0 +1,12 @@
+<link rel="stylesheet" type="text/css" href="/public/css/tips.css">
+<div class="tipBox">
+  <div class="h">成功提示</div>
+  <div class="c">{{message}}</div>
+  <div class="f">
+    {%if url%}
+    <a href="{{url}}">点击这里跳转</a>
+    {%else%}
+    <a href="javascript:window.history.back();">返回上一步</a>
+    {%endif%}
+  </div>
+</div>

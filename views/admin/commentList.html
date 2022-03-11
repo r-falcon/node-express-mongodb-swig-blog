@@ -1,0 +1,33 @@
+{% extends 'layout.html' %}
+{% block content %}
+<div class="nav">
+  后台管理 / 评论管理 / <span>评论列表</span>
+</div>
+
+{% for content in contents %}
+<div style="padding:30px 0 0 30px;">{{content.title}}</div>
+
+<table class="tableStyle">
+  <tr>
+    <th>评论者</th>
+    <th>评论内容</th>
+    <th>评论时间</th>
+    <th>操作</th>
+  </tr>
+
+  {% for comment in content.comments %}
+  <tr>
+    <td>{{comment.username}}</td>
+    <td>{{comment.comment}}</td>
+    <td>{{comment.postTime|date('Y-m-d H:i:s',-8*60)}}</td>
+    <td>
+      <span><a href="/admin/comment/delete?contentId={{content.id.toString()}}&comment={{comment.comment}}"
+          style="color: red;">删除</a></span>
+    </td>
+  </tr>
+  {% endfor %}
+</table>
+{% endfor %}
+
+{% include '../page.html' %}
+{% endblock %}

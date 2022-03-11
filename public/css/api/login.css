@@ -1,0 +1,11 @@
+.loginBox {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 80px auto;
+}
+
+form div {
+  margin: 10px 0;
+}

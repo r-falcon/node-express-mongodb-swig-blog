@@ -1,0 +1,19 @@
+{
+  "name": "express-blog",
+  "version": "1.0.0",
+  "description": "- 新建文件夹\r - 运行`npm init`",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.2",
+    "cookies": "^0.8.0",
+    "express": "^4.17.3",
+    "markdown": "^0.5.0",
+    "mongoose": "^6.2.4",
+    "swig": "^1.4.2"
+  }
+}

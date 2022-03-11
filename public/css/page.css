@@ -1,0 +1,16 @@
+.pageBox {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+
+.pageBox .pager {
+  width: 90%;
+  display: flex;
+  list-style: none;
+  justify-content: space-between;
+}
+
+.pageBox .pager li span {
+  color: blue;
+}

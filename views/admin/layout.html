@@ -1,0 +1,67 @@
+<!-- 公共后台管理布局 -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>后台管理</title>
+  <!-- <link rel="stylesheet" type="text/css" href="/public/css/admin/userStyle.css"> -->
+  <link rel="stylesheet" type="text/css" href="/public/css/admin/layout.css">
+</head>
+
+<body>
+  <div>
+    <div class="header">
+      <p>登录成功,欢迎 {{userInfo.username}} 进入博客管理后台</p>
+      <div>
+        <a href="/content">返回首页</a> |
+        <a href="/api/user/logout">退出登录</a>
+      </div>
+    </div>
+
+    <div class="container">
+      <ul class="contLeft">
+        <li><a href="/admin">首页</a></li>
+
+        <li>
+          用户管理
+          <ul class="menuItem">
+            <li><a href="/admin/user/userList">用户列表</a></li>
+          </ul>
+        </li>
+
+        <li>
+          分类管理
+          <ul class="menuItem">
+            <li><a href="/admin/sort/sortList">分类列表</a></li>
+          </ul>
+        </li>
+
+
+        <li>
+          文章内容管理
+          <ul class="menuItem">
+            <li><a href="/admin/article/articleList">内容列表</a></li>
+          </ul>
+        </li>
+
+        <li>
+          评论内容管理
+          <ul class="menuItem">
+            <li><a href="/admin/comment/commentList">评论列表</a></li>
+          </ul>
+        </li>
+
+      </ul>
+
+      <div class="contRight">
+        {% block content %}{% endblock %}
+      </div>
+    </div>
+  </div>
+
+</body>
+
+</html>

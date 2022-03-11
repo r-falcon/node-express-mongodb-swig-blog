@@ -1,0 +1,19 @@
+* {
+  margin: 0;
+  padding: 0;
+  /*盒子模型*/
+  box-sizing: border-box;
+  /*字体*/
+  font-family: '微软雅黑', sans-serif;
+}
+
+/*去除默认的样式*/
+ol,
+ul {
+  list-style: none;
+}
+
+/* 链接下划线去掉 */
+a {
+  text-decoration: none;
+}

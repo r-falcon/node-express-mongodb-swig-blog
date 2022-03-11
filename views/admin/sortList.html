@@ -1,0 +1,30 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<div class="nav">
+  后台管理 / 分类管理 / <span>分类列表</span>
+</div>
+
+<button class="addBtn"><a href="/admin/sort/create">添加分类</a></button>
+
+<table class="tableStyle">
+  <tr>
+    <th>分类ID</th>
+    <th>分类名称</th>
+    <th>操作</th>
+  </tr>
+
+  {% for category in categories %}
+  <tr>
+    <td>{{category._id.toString()}}</td>
+    <td>{{category.name}}</td>
+    <td>
+      <span><a href="/admin/sort/edit?id={{category._id.toString()}}">修改</a></span>
+      <span><a href="/admin/sort/delete?id={{category._id.toString()}}" style="color:red;">删除</a></span>
+    </td>
+  </tr>
+  {% endfor %}
+</table>
+{% include '../page.html' %}
+
+{% endblock %}

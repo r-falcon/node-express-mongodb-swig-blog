@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>API模块首页</title>
+  <link rel="stylesheet" type="text/css" href="/public/css/common.css">
+  <link rel="stylesheet" type="text/css" href="/public/css/main/layout.css">
+</head>
+
+<body>
+  <div>
+    <div class="header">
+      <img src="/public/imgs/header.jpg" alt="">
+      <ul class="nav">
+        {% for category in categories %}
+        <li><a href="/content?id={{category._id.toString()}}">{{category.name}}</a></li>
+        {% endfor %}
+      </ul>
+    </div>
+
+    <div class="container">
+      <div class="cLeft">
+        {% block content %}
+        {% endblock %}
+      </div>
+
+      <div class="cRight">
+        <h3>用户信息</h3>
+
+        <div class="user">
+          <p>欢迎！{{userInfo.username}}</p>
+          {%if userInfo.isAdmin %}
+          <p style="color:red;font-size: 12px;">您好，管理员！<a href="/admin">进入管理</a></p>
+          {%endif %}
+          <p style="font-size: 12px;"><a href="/api/user/logout">退出</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

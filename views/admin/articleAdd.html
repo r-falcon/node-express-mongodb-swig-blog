@@ -1,0 +1,28 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<div class="nav">
+  后台管理 / 内容管理 / <span>添加内容</span>
+</div>
+
+<div style="margin: 30px;">
+  <form action="/admin/article/create" method="post">
+    <div style="margin: 10px;">
+      分类：
+      <select name="category" id="category">
+        {% for category in categories %}
+        <option value={{category.id}}>{{category.name}}</option>
+        {% endfor %}
+      </select>
+    </div>
+    <div style="margin: 10px;">标题：<input placeholder="请输入文章标题" type="text" name="title" /></div>
+    <div style="margin: 10px;">简介：<textarea placeholder="请输入文章简介" rows='5' name="description"></textarea></div>
+    <div style="margin: 10px;">内容：<textarea placeholder="请输入文章内容" rows="6" name="content"></textarea></div>
+    <div style="margin-top: 10px;">
+      <input type="submit" value="提交" />
+      <a href="/admin/article/articleList">取消</a>
+    </div>
+  </form>
+</div>
+
+{% endblock %}
